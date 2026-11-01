@@ -122,16 +122,27 @@ layers = [
 ]
 
 
-def mark_svg_group(prefix):
+# optical-size variant for small UI sizes (nav, favicon): fewer, thicker bars and windows
+LAYERS_SMALL = [
+    ('slab', poly(SLAB), SLAB),
+    ('stripes', bars(STRIPE_Q, 5, 20, 14), STRIPE_Q),
+    ('left', bars(LEFT_Q, 4, 24, 16, 0, 0.98), LEFT_Q),
+    ('block', poly(BLOCK), BLOCK),
+    ('base', grid(BASE_L, 3, 2, 16) + ' ' + grid(BASE_R, 2, 2, 16), BASE_SIL),
+    ('crescent', poly(CRESCENT), CRESCENT),
+]
+
+
+def mark_svg_group(prefix, layers=layers, gap=GAP):
     """Returns (defs, body) — each layer is knocked out by every layer in front of it."""
     defs, body = [], []
     for i, (name, d, sil) in enumerate(layers):
         front = layers[i + 1:]
         extra = ''
         if name == 'block':
-            extra = f'<path d="M{BLOCK_CREASE[0][0]} {BLOCK_CREASE[0][1]} L{BLOCK_CREASE[1][0]} {BLOCK_CREASE[1][1]}" stroke="#000" stroke-width="5"/>'
+            extra = f'<path d="M{BLOCK_CREASE[0][0]} {BLOCK_CREASE[0][1]} L{BLOCK_CREASE[1][0]} {BLOCK_CREASE[1][1]}" stroke="#000" stroke-width="{5 if gap == GAP else 9}"/>'
         if front or extra:
-            cut = ''.join(f'<path d="{poly(f[2])}" fill="#000" stroke="#000" stroke-width="{GAP * 2}" stroke-linejoin="round"/>' for f in front)
+            cut = ''.join(f'<path d="{poly(f[2])}" fill="#000" stroke="#000" stroke-width="{gap * 2}" stroke-linejoin="round"/>' for f in front)
             defs.append(f'<mask id="{prefix}{name}" maskUnits="userSpaceOnUse" x="0" y="0" width="720" height="760">'
                         f'<rect width="720" height="760" fill="#fff"/>{cut}{extra}</mask>')
             body.append(f'<path d="{d}" fill-rule="evenodd" mask="url(#{prefix}{name})"/>')
@@ -184,3 +195,9 @@ for name, col, body in (('logo-white', '#F5F5F4', b1 + f'<path d="{WM}"/>'), ('m
     vb = VB_LOGO if name.startswith('logo') else VB_MARK
     open(os.path.join(OUT, name + '.svg'), 'w').write(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" fill="{col}"><defs>{d1}</defs>{body}</svg>')
+
+# small-size mark (nav, favicon)
+d3, b3 = mark_svg_group('s', LAYERS_SMALL, 11)
+for name, col in (('mark-small-white', '#F5F5F4'), ('mark-small-orange', '#FF6A2A')):
+    open(os.path.join(OUT, name + '.svg'), 'w').write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{VB_MARK}" fill="{col}"><defs>{d3}</defs>{b3}</svg>')

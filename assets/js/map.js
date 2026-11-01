@@ -85,7 +85,7 @@
 
   function render() {
     scale = Math.min(W / (VIEW_R * 2.05), (H - 70) / (VIEW_R * 2 * TILT + SITE_H * HZ * 0.55)) * st.zoom;
-    cx = W / 2; cy = H * (MOBILE ? 0.58 : 0.6);
+    cx = W / 2; cy = H * (MOBILE ? 0.56 : 0.53);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
 
@@ -136,7 +136,7 @@
       const c = Math.cos(st.rot), s = Math.sin(st.rot);
       const lp = project(-rr * s, -rr * c, 0); // point of the ring closest to the viewer
       ctx.font = '600 11px Montserrat, sans-serif'; ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(255,170,120,.85)'; ctx.fillText(rr + ' м', lp[0], lp[1] - 6);
+      ctx.fillStyle = 'rgba(255,170,120,.85)'; ctx.fillText(rr + ' м', lp[0], Math.min(lp[1] - 6, H - 14));
     }
 
     // route to the active place
@@ -160,20 +160,31 @@
     items.sort((a, b) => b.d - a.d);
     for (const it of items) it.site ? drawPrism(D.site, SITE_H, true) : drawPrism(it.b.p, it.b.h, false);
 
-    // pin stems + positions
-    for (const pin of pins) {
+    // pins: labels stay inside the stage and are pushed apart when they collide
+    const placed = [];
+    const order = pins.slice().sort((a, b) => (b.k === 'site') - (a.k === 'site') || (b.k === st.active) - (a.k === st.active));
+    for (const pin of order) {
       const p = pin.k === 'site' ? [0, 0] : D.poi[pin.k];
       if (!p) continue;
-      const z = pin.k === 'site' ? SITE_H + 8 : 26;
-      const g0 = project(p[0], p[1], pin.k === 'site' ? SITE_H : 0), t = project(p[0], p[1], z);
       const on = pin.k === st.active || pin.k === 'site';
-      ctx.beginPath(); ctx.moveTo(g0[0], g0[1]); ctx.lineTo(t[0], t[1]);
+      const g0 = project(p[0], p[1], pin.k === 'site' ? SITE_H : 0);
+      const t = project(p[0], p[1], pin.k === 'site' ? SITE_H + 8 : 26);
+      if (!pin.w) { pin.w = pin.el.offsetWidth; pin.h = pin.el.offsetHeight; }
+      const x = Math.min(Math.max(t[0], pin.w / 2 + 8), W - pin.w / 2 - 8);
+      let y = Math.min(Math.max(t[1], pin.h + 8), H - 8), tries = 0;
+      const box = () => ({ l: x - pin.w / 2 - 3, r: x + pin.w / 2 + 3, t: y - pin.h - 3, b: y + 3 });
+      let bx = box();
+      while (tries < 4 && placed.some(q => bx.l < q.r && bx.r > q.l && bx.t < q.b && bx.b > q.t)) { y -= pin.h + 6; bx = box(); tries++; }
+      const offStage = g0[0] < -20 || g0[0] > W + 20 || g0[1] < -20 || g0[1] > H + 20;
+      const hidden = offStage || (!on && (tries >= 4 || y < pin.h + 4));
+      pin.el.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
+      pin.el.style.visibility = hidden ? 'hidden' : 'visible';
+      pin.el.classList.toggle('is-back', g0[2] > 160 && !on);
+      if (hidden) continue;
+      placed.push(bx);
+      ctx.beginPath(); ctx.moveTo(g0[0], g0[1]); ctx.lineTo(x, y);
       ctx.strokeStyle = on ? `rgba(${ACCENT},.9)` : 'rgba(255,255,255,.35)'; ctx.lineWidth = 1; ctx.stroke();
       if (pin.k !== 'site') { ctx.beginPath(); ctx.arc(g0[0], g0[1], 2.6, 0, Math.PI * 2); ctx.fillStyle = on ? `rgb(${ACCENT})` : '#fff'; ctx.fill(); }
-      const out = t[0] < 10 || t[0] > W - 10 || t[1] < 10 || t[1] > H - 10;
-      pin.el.style.transform = `translate(${t[0].toFixed(1)}px,${t[1].toFixed(1)}px) translate(-50%,-100%)`;
-      pin.el.style.visibility = out ? 'hidden' : 'visible';
-      pin.el.classList.toggle('is-back', g0[2] > 160 && !on);
     }
 
     // compass: direction of north on screen
@@ -206,7 +217,7 @@
   function setActive(k) {
     st.active = k;
     list.querySelectorAll('[data-poi]').forEach(b => b.classList.toggle('is-on', b.dataset.poi === k));
-    pins.forEach(p => p.k !== 'site' && p.el.classList.toggle('is-on', p.k === k));
+    pins.forEach(p => { p.w = 0; if (p.k !== 'site') p.el.classList.toggle('is-on', p.k === k); });
     dirty = true;
   }
   list.addEventListener('click', e => { const b = e.target.closest('[data-poi]'); if (b) setActive(b.dataset.poi); });

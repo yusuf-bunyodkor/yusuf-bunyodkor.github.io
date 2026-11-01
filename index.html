@@ -9,13 +9,13 @@
 <meta property="og:title" content="ЖК «Юсуф Бунёдкор»">
 <meta property="og:description" content="16 ошёна · 2 блок · 182 квартира. ш. Ваҳдат, хиёбони Сомониён.">
 <meta property="og:image" content="assets/img/night-m.webp">
-<link rel="icon" href="assets/logo/mark-orange.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/mark-small-orange.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/night.webp" media="(min-width: 761px)">
 <link rel="preload" as="image" href="assets/img/night-m.webp" media="(max-width: 760px)">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -26,30 +26,52 @@
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a class="nav__brand" href="#top" aria-label="Юсуф Бунёдкор">
-    <img src="assets/logo/mark-white.svg" alt="" width="30" height="31">
-    <span>Юсуф Бунёдкор</span>
-  </a>
-  <nav class="nav__links" aria-label="Menu">
-    <a href="#about" data-i18n="nAbout">Лоиҳа</a>
-    <a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a>
-    <a href="#infra" data-i18n="nInfra">Инфрасохтор</a>
-    <a href="#flats" data-i18n="nFlats">Хонаҳо</a>
-    <a href="#price" data-i18n="nPrice">Нархҳо</a>
-  </nav>
-  <div class="nav__right">
-    <div class="lang" role="group" aria-label="Language"><button data-lang="tg" class="is-on">TJ</button><button data-lang="ru">RU</button></div>
-    <a class="btn btn--accent btn--sm hide-sm" href="#contact" data-i18n="nContact">Тамос</a>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="Юсуф Бунёдкор">
+      <span class="brand__mark"><img src="assets/logo/mark-small-white.svg" alt="" width="24" height="25"></span>
+      <span class="brand__txt"><b>Юсуф Бунёдкор</b><small data-i18n="brandSub">ЖК · ш. Ваҳдат</small></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Menu">
+      <span class="nav__ind" id="navInd" aria-hidden="true"></span>
+      <a href="#about" data-i18n="nAbout">Лоиҳа</a>
+      <a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a>
+      <a href="#infra" data-i18n="nInfra">Инфрасохтор</a>
+      <a href="#flats" data-i18n="nFlats">Хонаҳо</a>
+      <a href="#price" data-i18n="nPrice">Нархҳо</a>
+    </nav>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Language"><button data-lang="tg" class="is-on">TJ</button><button data-lang="ru">RU</button></div>
+      <a class="nav__cta" href="#contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        <span data-i18n="nContact">Тамос</span>
+      </a>
+      <button class="menu-btn" id="burger" aria-label="Menu" aria-expanded="false">
+        <span class="menu-btn__l" data-i18n="menu">Меню</span>
+        <span class="menu-btn__i"><i></i><i></i></span>
+      </button>
+    </div>
   </div>
+  <span class="nav__prog" aria-hidden="true"><i id="navProg"></i></span>
 </header>
-<div class="mnav" id="mnav">
-  <a href="#about" data-i18n="nAbout">Лоиҳа</a>
-  <a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a>
-  <a href="#infra" data-i18n="nInfra">Инфрасохтор</a>
-  <a href="#flats" data-i18n="nFlats">Хонаҳо</a>
-  <a href="#price" data-i18n="nPrice">Нархҳо</a>
-  <a href="#contact" data-i18n="nContact">Тамос</a>
+
+<div class="ov" id="ov" aria-hidden="true">
+  <div class="ov__in">
+    <nav class="ov__links" aria-label="Menu">
+      <a href="#about" data-img="night"><span class="ov__n">01</span><span class="ov__t" data-i18n="nAbout">Лоиҳа</span></a>
+      <a href="#location" data-img="aerial"><span class="ov__n">02</span><span class="ov__t" data-i18n="nLoc">Ҷойгиршавӣ</span></a>
+      <a href="#infra" data-img="mall"><span class="ov__n">03</span><span class="ov__t" data-i18n="nInfra">Инфрасохтор</span></a>
+      <a href="#real" data-img="lobby"><span class="ov__n">04</span><span class="ov__t" data-i18n="nGallery">Галерея</span></a>
+      <a href="#flats" data-img="day-3"><span class="ov__n">05</span><span class="ov__t" data-i18n="nFlats">Хонаҳо</span></a>
+      <a href="#price" data-img="detail"><span class="ov__n">06</span><span class="ov__t" data-i18n="nPrice">Нархҳо</span></a>
+      <a href="#contact" data-img="office"><span class="ov__n">07</span><span class="ov__t" data-i18n="nContact">Тамос</span></a>
+    </nav>
+    <figure class="ov__ph" aria-hidden="true"><img id="ovImg" src="assets/img/night-m.webp" alt=""></figure>
+    <div class="ov__foot">
+      <div><span class="ov__k" data-i18n="ftAddr">Суроға</span><span data-i18n="addrShort">ш. Ваҳдат, хиёбони Сомониён, назди мактаби №1</span></div>
+      <div><span class="ov__k" data-i18n="ftPhone">Телефон</span><a href="tel:+992000777761">+992 000 7777 61</a></div>
+      <a class="btn btn--accent" href="#contact" data-i18n="ovCta">Ба офис ташриф биёред</a>
+    </div>
+  </div>
 </div>
 
 <main id="top">
@@ -72,9 +94,6 @@
       <button class="toggle" id="dayNight" aria-label="Day / Night">
         <span data-i18n="day">Рӯз</span><i><b></b></i><span data-i18n="night">Шаб</span>
       </button>
-      <a class="hero__next" href="#about" aria-label="Down">
-        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-      </a>
     </div>
   </div>
 </section>
@@ -85,10 +104,10 @@
     <div class="about__grid">
       <div>
         <p class="label" data-r><i class="dot"></i><span data-i18n="aLabel">Лоиҳа</span></p>
-        <h2 class="h1 split" data-i18n="aTitle">Зиндагии бароҳат. Ҳама чиз дар наздикии шумо.</h2>
+        <h2 class="h1 split" data-i18n="aTitle">Зиндагии бароҳат дар маркази шаҳри Ваҳдат</h2>
       </div>
       <div class="about__side">
-        <p class="body fill" data-i18n="aText">Ин лоиҳа дар шаҳри Ваҳдат, кӯчаи Сомониён, рӯ ба рӯи Коллеҷи омор ҷойгир аст. Ҳангоми интихоби хона танҳо худи бино муҳим нест. Муҳим он аст, ки зиндагӣ дар он то чӣ андоза бароҳат мешавад.</p>
+        <p class="body fill" data-i18n="aText">ЖК «Юсуф Бунёдкор» дар шаҳри Ваҳдат, дар хиёбони Сомониён, рӯ ба рӯи Коллеҷи омор ҷойгир аст. Дар наздикӣ мактаб, кӯдакистон, бозор ва роҳҳои асосии шаҳр ҳастанд.</p>
         <div class="stats">
           <div class="stat" data-r><b class="num" data-count="16">16</b><span data-i18n="sFloors">ошёна</span></div>
           <div class="stat" data-r><b class="num" data-count="2">2</b><span data-i18n="sBlocks">блок</span></div>
@@ -98,9 +117,9 @@
       </div>
     </div>
     <div class="trio">
-      <figure class="ph ph--tilt-l" data-r><img src="assets/img/retail.webp" srcset="assets/img/retail-m.webp 960w, assets/img/retail.webp 1739w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
-      <figure class="ph" data-r><img src="assets/img/day-2.webp" srcset="assets/img/day-2-m.webp 960w, assets/img/day-2.webp 1738w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
-      <figure class="ph ph--tilt-r" data-r><img src="assets/img/detail.webp" srcset="assets/img/detail-m.webp 960w, assets/img/detail.webp 1736w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+      <figure class="ph ph--tilt-l"><img src="assets/img/retail.webp" srcset="assets/img/retail-m.webp 960w, assets/img/retail.webp 1739w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+      <figure class="ph"><img src="assets/img/day-2.webp" srcset="assets/img/day-2-m.webp 960w, assets/img/day-2.webp 1738w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+      <figure class="ph ph--tilt-r"><img src="assets/img/detail.webp" srcset="assets/img/detail-m.webp 960w, assets/img/detail.webp 1736w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
     </div>
   </div>
   <div class="marquee" aria-hidden="true">
@@ -141,7 +160,7 @@
       <span class="paybar__q" data-i18n="payQ">Тарзи пардохт</span>
       <div class="seg" id="payMode">
         <button data-pay="full" data-i18n="payFull">Пурра</button>
-        <button data-pay="inst" data-i18n="payInst">Рассрочка</button>
+        <button data-pay="inst" class="is-on" data-i18n="payInst">Рассрочка</button>
       </div>
       <span class="paybar__note" data-i18n="payNote">Интихоби шумо дар ҳисобкунаки нарх истифода мешавад.</span>
     </div>
@@ -217,16 +236,11 @@
         <h3 class="h3" data-i18n="c3t">Майдончаи кӯдакона</h3>
         <p class="small" data-i18n="c3d">Ҳавлии пӯшида, таҷҳизоти бозӣ, ҷойҳои нишаст ва арғунчакҳо.</p>
       </article>
-      <article class="card card--facts" data-r>
-        <div class="facts">
-          <div><b class="num">2</b><span data-i18n="f1">блок</span></div>
-          <div><b class="num">2</b><span data-i18n="f2">даромадгоҳ</span></div>
-          <div><b class="num">4</b><span data-i18n="f3">лифт</span></div>
-          <div><b class="num">P</b><span data-i18n="f4">парковка</span></div>
-        </div>
+      <article class="card" data-r>
+        <figure class="card__ph"><img src="assets/img/lobby-m.webp" alt="" loading="lazy" data-px></figure>
         <span class="card__n">04</span>
-        <h3 class="h3" data-i18n="c4t">Парковка</h3>
-        <p class="small" data-i18n="c4d">Зеризаминӣ ва рӯизаминӣ. Балконҳо аз тарафи қафои бино.</p>
+        <h3 class="h3" data-i18n="c4t">Лифтҳо ва парковка</h3>
+        <p class="small" data-i18n="c4d">4 лифт дар ду даромадгоҳ. Парковкаи зеризаминӣ ва рӯизаминӣ.</p>
       </article>
     </div>
   </div>
@@ -236,23 +250,20 @@
 <section class="arcsec" id="real">
   <div class="arcsec__pin">
     <div class="arc" id="arc">
-      <figure><img src="assets/img/lobby-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/corridor-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/lift-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/mall-2-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/office-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/night-angle-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/lobby-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/detail-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/corridor-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/office-2-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/lift-m.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/img/retail-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="office"><img src="assets/img/office-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="lifts"><img src="assets/img/lobby-2-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="corridor"><img src="assets/img/corridor-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="door"><img src="assets/img/corridor-door-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="mall"><img src="assets/img/mall-2-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="facade"><img src="assets/img/day-3-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="build"><img src="assets/img/build-1-m.webp" alt="" loading="lazy"></figure>
+      <figure data-cap="build"><img src="assets/img/build-3-m.webp" alt="" loading="lazy"></figure>
     </div>
     <div class="arcsec__c">
-      <p class="label"><i class="dot"></i><span data-i18n="gLabel">Аксҳои воқеӣ</span></p>
-      <h2 class="h1" data-i18n="gTitle">Даромадгоҳ ва лифтҳо</h2>
-      <p class="body" data-i18n="gText">Ин аксҳо аз худи бино ва офиси фурӯш гирифта шудаанд.</p>
+      <span class="arc__cap" id="arcCap" aria-live="polite"><b id="arcNum">01</b><span>/ 11</span><span id="arcCapT"></span></span>
+      <p class="label"><i class="dot"></i><span data-i18n="gLabel">Галерея</span></p>
+      <h2 class="h1" data-i18n="gTitle">Бино аз наздик</h2>
+      <p class="body" data-i18n="gText">Аксҳои воқеӣ аз бино ва офиси фурӯш, инчунин визуализатсияи лоиҳа.</p>
     </div>
   </div>
 </section>
@@ -315,10 +326,8 @@
       <p class="label" data-r><i class="dot"></i><span data-i18n="qLabel">Сифати сохтмон</span></p>
       <h2 class="h1 split" data-i18n="qTitle">Сохтмон бо таваҷҷуҳ ба ҷузъиёти муҳим</h2>
       <div class="specs">
-        <div class="spec" data-r><b class="num" data-count="16">16</b><span data-i18n="q1">ошёна</span></div>
         <div class="spec" data-r><b class="num" data-count="9">9</b><span data-i18n="q2">қатор тирезаҳои панорамӣ</span></div>
         <div class="spec" data-r><b class="num">М350</b><span data-i18n="q3">маркаи семент</span></div>
-        <div class="spec" data-r><b class="num" data-count="182">182</b><span data-i18n="q4">квартира дар маҷмӯъ</span></div>
       </div>
       <ul class="checks" data-r>
         <li data-i18n="q5">Арматура мувофиқи стандартҳои эълоншуда</li>
@@ -342,13 +351,13 @@
         <p class="label" data-r><i class="dot"></i><span data-i18n="fLabel">Хонаҳо</span></p>
         <h2 class="h1 split" data-i18n="fTitle">Аз якхонагӣ то сехонагӣ</h2>
       </div>
-      <p class="body head__p" data-r data-i18n="fText">Масоҳати квартираҳо тақрибан аз 50 то 90 м². Нарх аз ошёна вобаста аст.</p>
+      <p class="body head__p" data-r data-i18n="fText">Масоҳати квартираҳо аз 50 то 93 м². Нарх аз ошёна вобаста аст.</p>
     </div>
     <div class="plans">
       <article class="plan" data-r data-area="50">
         <div class="plan__top">
           <span class="plan__k" data-i18n="r1">1-хонагӣ</span>
-          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M30 10H110M170 160H215"/><path d="M10 10H230V160H10Z M140 10V160 M140 95H230 M185 95V160" pathLength="1"/></svg>
+          <span class="plan__big" aria-hidden="true">1</span>
           <b class="num">50 <small>м²</small></b>
           <span class="plan__p"><span data-i18n="from">аз</span> $28 500</span>
         </div>
@@ -362,7 +371,7 @@
       <article class="plan plan--hot" data-r data-area="65">
         <div class="plan__top">
           <span class="plan__k" data-i18n="r2">2-хонагӣ</span>
-          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M25 10H95M140 10H210M25 160H65"/><path d="M10 10H230V160H10Z M120 10V100 M10 100H230 M80 100V160 M170 100V160" pathLength="1"/></svg>
+          <span class="plan__big" aria-hidden="true">2</span>
           <b class="num">61–69 <small>м²</small></b>
           <span class="plan__p"><span data-i18n="from">аз</span> $34 770</span>
         </div>
@@ -376,7 +385,7 @@
       <article class="plan" data-r data-area="85">
         <div class="plan__top">
           <span class="plan__k" data-i18n="r3">3-хонагӣ</span>
-          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M20 10H75M105 10H145M175 10H220M190 160H220"/><path d="M10 10H230V160H10Z M90 10V95 M160 10V95 M10 95H230 M60 95V160 M180 95V160 M120 95V125" pathLength="1"/></svg>
+          <span class="plan__big" aria-hidden="true">3</span>
           <b class="num">80–93 <small>м²</small></b>
           <span class="plan__p"><span data-i18n="from">аз</span> $45 600</span>
         </div>
@@ -409,13 +418,14 @@
       <div class="tower-card" data-r>
         <div class="tower-card__head"><span data-i18n="floor">Ошёна</span><span data-i18n="minPre">Пешпардохт аз</span><span>$ / м²</span></div>
         <div class="tower" id="tower"></div>
+        <div class="tower__base"><span>3–4</span><b data-i18n="floors34">Нархро дар офиси фурӯш пурсед</b></div>
         <div class="tower__base"><span>1–2</span><b data-i18n="mallShort">Маркази савдо</b></div>
       </div>
       <div class="calc" data-r>
         <div class="calc__rows">
-          <div class="crow"><label><span data-i18n="cFloor">Ошёна</span><b id="cFloorV">9</b></label><input type="range" id="cFloor" min="5" max="16" step="1" value="9"></div>
-          <div class="crow"><label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label><input type="range" id="cArea" min="50" max="93" step="1" value="65"></div>
-          <div class="crow"><label><span data-i18n="cPre">Пешпардохт</span><b><span id="cPreV">50</span>%</b></label><input type="range" id="cPre" min="20" max="100" step="5" value="50"><small id="cPreHint"></small></div>
+          <div class="crow"><label><span data-i18n="cFloor">Ошёна</span><b id="cFloorV">9</b></label><input type="range" id="cFloor" aria-label="Ошёна" min="5" max="16" step="1" value="9"></div>
+          <div class="crow"><label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label><input type="range" id="cArea" aria-label="Масоҳат" min="50" max="93" step="1" value="65"></div>
+          <div class="crow"><label><span data-i18n="cPre">Пешпардохт</span><b><span id="cPreV">50</span>%</b></label><input type="range" id="cPre" aria-label="Пешпардохт" min="20" max="100" step="5" value="50"><small id="cPreHint"></small></div>
           <div class="crow" id="termRow"><label><span data-i18n="cTerm">Рассрочка</span></label>
             <div class="seg seg--full" id="cTerm"><button data-term="6" data-i18n="m6">6 моҳ</button><button data-term="12" class="is-on" data-i18n="m12">12 моҳ</button><button data-term="18" data-i18n="m18">18 моҳ</button></div>
           </div>
@@ -438,7 +448,7 @@
 <section class="sec cta" id="contact">
   <div class="wrap">
     <div class="cta__card" data-r>
-      <img class="cta__bg" src="assets/img/office-m.webp" alt="" loading="lazy" data-px>
+      <img class="cta__bg" src="assets/img/night-angle.webp" srcset="assets/img/night-angle-m.webp 960w, assets/img/night-angle.webp 1997w" sizes="100vw" alt="" loading="lazy" data-px>
       <div class="cta__in">
         <p class="label"><i class="dot"></i><span data-i18n="ctLabel">Тамос</span></p>
         <h2 class="h1" data-i18n="ctTitle">Ба офиси фурӯш ташриф биёред</h2>
@@ -481,8 +491,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/map-data.js?v=3"></script>
-<script src="assets/js/map.js?v=3"></script>
-<script src="assets/js/app.js?v=3"></script>
+<script src="assets/js/map-data.js?v=6"></script>
+<script src="assets/js/map.js?v=6"></script>
+<script src="assets/js/app.js?v=6"></script>
 </body>
 </html>
