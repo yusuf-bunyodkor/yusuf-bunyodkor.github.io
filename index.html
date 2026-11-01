@@ -3,447 +3,486 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ЖК «Юсуф Бунёдкор» — ш. Ваҳдат</title>
-<meta name="description" content="ЖК «Юсуф Бунёдкор» — 16 ошёна, 2 блок, 182 квартира. ш. Ваҳдат, кӯчаи Сомониён. Презентатсияи интерактивӣ.">
-<meta name="theme-color" content="#0b0c0e">
+<title>ЖК «Юсуф Бунёдкор» · ш. Ваҳдат</title>
+<meta name="description" content="ЖК «Юсуф Бунёдкор»: 16 ошёна, 2 блок, 182 квартира. ш. Ваҳдат, хиёбони Сомониён.">
+<meta name="theme-color" content="#0e0e10">
 <meta property="og:title" content="ЖК «Юсуф Бунёдкор»">
-<meta property="og:description" content="Зиндагии бароҳат. Ҳама чиз дар наздикии шумо. ш. Ваҳдат, кӯчаи Сомониён.">
-<meta property="og:image" content="assets/img/night.webp">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0c0e'/%3E%3Cpath d='M9 26V12l5-3v17M14 26V6l5 3v17M19 26V13l4 2v11' fill='none' stroke='%23d8b779' stroke-width='1.6'/%3E%3C/svg%3E">
+<meta property="og:description" content="16 ошёна · 2 блок · 182 квартира. ш. Ваҳдат, хиёбони Сомониён.">
+<meta property="og:image" content="assets/img/night-m.webp">
+<link rel="icon" href="assets/logo/mark-orange.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap&subset=cyrillic-ext" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/night.webp">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/night.webp" media="(min-width: 761px)">
+<link rel="preload" as="image" href="assets/img/night-m.webp" media="(max-width: 760px)">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 
-<!-- ===== Preloader ===== -->
 <div class="loader" id="loader">
-  <div class="loader__mark">
-    <svg viewBox="0 0 64 64" class="mark-svg"><path d="M14 54V24l10-6v36M24 54V10l10 6v38M34 54V26l9 4v24M8 54h48" pathLength="1"/></svg>
-  </div>
-  <div class="loader__name">ЮСУФ БУНЁДКОР</div>
-  <div class="loader__bar"><span id="loaderBar"></span></div>
-  <div class="loader__pct" id="loaderPct">0</div>
+  <img class="loader__mark" src="assets/logo/mark-white.svg" alt="">
+  <div class="loader__bar"><span></span></div>
 </div>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
-
-<!-- ===== App chrome ===== -->
-<header class="top">
-  <a class="brand" href="#1" data-go="0" aria-label="Юсуф Бунёдкор">
-    <svg viewBox="0 0 64 64" class="brand__mark"><path d="M14 54V24l10-6v36M24 54V10l10 6v38M34 54V26l9 4v24M8 54h48"/></svg>
-    <span class="brand__txt"><b>ЮСУФ</b> БУНЁДКОР</span>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Юсуф Бунёдкор">
+    <img src="assets/logo/mark-white.svg" alt="" width="30" height="31">
+    <span>Юсуф Бунёдкор</span>
   </a>
-  <div class="top__section"><span class="top__num" id="topNum">01</span><span class="top__title" id="topTitle"></span></div>
-  <div class="top__right">
-    <button class="profile-chip" id="profileChip" data-go="1" hidden><i></i><span id="profileTxt"></span></button>
-    <div class="lang" role="group" aria-label="Language">
-      <button data-lang="tg" class="is-on">TJ</button><button data-lang="ru">RU</button>
-    </div>
-    <button class="icon-btn hide-m" id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
+  <nav class="nav__links" aria-label="Menu">
+    <a href="#about" data-i18n="nAbout">Лоиҳа</a>
+    <a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a>
+    <a href="#infra" data-i18n="nInfra">Инфрасохтор</a>
+    <a href="#flats" data-i18n="nFlats">Хонаҳо</a>
+    <a href="#price" data-i18n="nPrice">Нархҳо</a>
+  </nav>
+  <div class="nav__right">
+    <div class="lang" role="group" aria-label="Language"><button data-lang="tg" class="is-on">TJ</button><button data-lang="ru">RU</button></div>
+    <a class="btn btn--accent btn--sm hide-sm" href="#contact" data-i18n="nContact">Тамос</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
-
-<nav class="rail" id="rail" aria-label="Slides"></nav>
-
-<div class="bottom">
-  <div class="counter"><span class="counter__cur" id="cntCur">01</span><span class="counter__sep">/</span><span class="counter__all" id="cntAll">10</span></div>
-  <div class="progress"><span id="progressBar"></span></div>
-  <div class="hint hide-m"><span class="hint__mouse"><i></i></span><span data-i18n="hint">Скрол ё тугмаҳои ← →</span></div>
-  <div class="arrows">
-    <button class="arrow" id="prevBtn" aria-label="Prev"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-    <button class="arrow" id="nextBtn" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-  </div>
+<div class="mnav" id="mnav">
+  <a href="#about" data-i18n="nAbout">Лоиҳа</a>
+  <a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a>
+  <a href="#infra" data-i18n="nInfra">Инфрасохтор</a>
+  <a href="#flats" data-i18n="nFlats">Хонаҳо</a>
+  <a href="#price" data-i18n="nPrice">Нархҳо</a>
+  <a href="#contact" data-i18n="nContact">Тамос</a>
 </div>
 
-<!-- ===== Menu overlay ===== -->
-<div class="menu" id="menu" aria-hidden="true">
-  <div class="menu__head"><span data-i18n="menuTitle">Мундариҷа</span></div>
-  <div class="menu__grid" id="menuGrid"></div>
-</div>
+<main id="top">
 
-<main class="deck" id="deck">
-
-  <!-- 01 HERO -->
-  <section class="slide s-hero" data-title="Муаррифӣ" data-title-ru="Знакомство" data-thumb="night">
-    <div class="bg" data-parallax>
-      <img class="bg__img bg__day" src="assets/img/day.webp" alt="">
-      <img class="bg__img bg__night" src="assets/img/night.webp" alt="">
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__top">
+      <span class="chip"><i class="dot"></i><span data-i18n="heroChip">ш. Ваҳдат, хиёбони Сомониён</span></span>
+      <span class="hero__meta" data-i18n="heroMeta">16 ошёна · 2 блок · 182 квартира</span>
     </div>
-    <div class="shade shade--hero"></div>
-    <div class="slide__scroll">
-      <div class="hero">
-        <div class="eyebrow" data-a><span class="dot"></span><span data-i18n="heroEyebrow">Маҷмааи истиқоматӣ · ш. Ваҳдат</span></div>
-        <h1 class="display split" data-i18n="heroTitle">Юсуф<br><em>Бунёдкор</em></h1>
-        <p class="lead" data-a data-i18n="heroLead">Зиндагии бароҳат. Ҳама чиз дар наздикии шумо.</p>
-        <div class="hero__stats" data-a>
-          <div class="stat"><b data-count="16">0</b><span data-i18n="floors">ошёна</span></div>
-          <div class="stat"><b data-count="2">0</b><span data-i18n="blocks">блок</span></div>
-          <div class="stat"><b data-count="182">0</b><span data-i18n="flats">квартира</span></div>
-        </div>
-        <div class="hero__cta" data-a>
-          <button class="btn btn--gold" data-next><span data-i18n="start">Оғози презентатсия</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn btn--ghost" data-go="8"><span data-i18n="toPrices">Нархҳо</span></button>
+    <h1 class="giant" aria-label="Юсуф Бунёдкор"><span class="giant__line"><span>Юсуф</span></span> <span class="giant__line"><span>Бунёдкор</span></span></h1>
+  </div>
+  <div class="hero__media" id="heroMedia">
+    <div class="hero__img">
+      <img class="hero__day" src="assets/img/day.webp" srcset="assets/img/day-m.webp 960w, assets/img/day.webp 2000w" sizes="100vw" alt="" loading="lazy">
+      <img class="hero__night" src="assets/img/night.webp" srcset="assets/img/night-m.webp 960w, assets/img/night.webp 2120w" sizes="100vw" alt="ЖК «Юсуф Бунёдкор»" fetchpriority="high">
+    </div>
+    <div class="hero__ui">
+      <button class="toggle" id="dayNight" aria-label="Day / Night">
+        <span data-i18n="day">Рӯз</span><i><b></b></i><span data-i18n="night">Шаб</span>
+      </button>
+      <a class="hero__next" href="#about" aria-label="Down">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="aLabel">Лоиҳа</span></p>
+        <h2 class="h1 split" data-i18n="aTitle">Зиндагии бароҳат. Ҳама чиз дар наздикии шумо.</h2>
+      </div>
+      <div class="about__side">
+        <p class="body fill" data-i18n="aText">Ин лоиҳа дар шаҳри Ваҳдат, кӯчаи Сомониён, рӯ ба рӯи Коллеҷи омор ҷойгир аст. Ҳангоми интихоби хона танҳо худи бино муҳим нест. Муҳим он аст, ки зиндагӣ дар он то чӣ андоза бароҳат мешавад.</p>
+        <div class="stats">
+          <div class="stat" data-r><b class="num" data-count="16">16</b><span data-i18n="sFloors">ошёна</span></div>
+          <div class="stat" data-r><b class="num" data-count="2">2</b><span data-i18n="sBlocks">блок</span></div>
+          <div class="stat" data-r><b class="num" data-count="182">182</b><span data-i18n="sFlats">квартира</span></div>
+          <div class="stat" data-r><b class="num" data-count="4">4</b><span data-i18n="sLifts">лифт</span></div>
         </div>
       </div>
-      <div class="hero__addr" data-a>
-        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
-        <div><b data-i18n="addr1">ш. Ваҳдат, кӯчаи Сомониён</b><span data-i18n="addr2">Рӯ ба рӯи Коллеҷи Омор</span></div>
-      </div>
-      <button class="daynight" id="dayNight" data-a aria-label="Day / Night">
-        <span class="daynight__opt" data-i18n="day">Рӯз</span>
-        <span class="daynight__track"><i></i></span>
-        <span class="daynight__opt" data-i18n="night">Шаб</span>
+    </div>
+    <div class="trio">
+      <figure class="ph ph--tilt-l" data-r><img src="assets/img/retail.webp" srcset="assets/img/retail-m.webp 960w, assets/img/retail.webp 1739w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+      <figure class="ph" data-r><img src="assets/img/day-2.webp" srcset="assets/img/day-2-m.webp 960w, assets/img/day-2.webp 1738w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+      <figure class="ph ph--tilt-r" data-r><img src="assets/img/detail.webp" srcset="assets/img/detail-m.webp 960w, assets/img/detail.webp 1736w" sizes="(max-width:760px) 90vw, 33vw" alt="" loading="lazy" data-px></figure>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" data-i18n="marquee"></div>
+  </div>
+</section>
+
+<!-- ============ NEEDS ============ -->
+<section class="sec needs" id="needs">
+  <div class="wrap">
+    <div class="head">
+      <p class="label" data-r><i class="dot"></i><span data-i18n="nLabel">Шиносоӣ</span></p>
+      <h2 class="h1 split" data-i18n="nTitle">Барои шумо кадомаш муҳимтар аст?</h2>
+    </div>
+    <div class="needs__grid">
+      <button class="need" data-need="family" data-r>
+        <span class="need__n">01</span>
+        <span class="need__ico"><svg viewBox="0 0 32 32"><path d="M5 15L16 6l11 9M8 13v13h16V13"/><path d="M13 26v-7h6v7"/></svg></span>
+        <span class="need__t" data-i18n="need1">Барои зиндагии оилавӣ</span>
+      </button>
+      <button class="need" data-need="invest" data-r>
+        <span class="need__n">02</span>
+        <span class="need__ico"><svg viewBox="0 0 32 32"><path d="M5 26h22M8 21l6-6 4 4 8-9"/><path d="M21 10h5v5"/></svg></span>
+        <span class="need__t" data-i18n="need2">Барои сармоягузорӣ</span>
+      </button>
+      <button class="need" data-need="area" data-r>
+        <span class="need__n">03</span>
+        <span class="need__ico"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20"/><path d="M6 15h8V6M18 26v-7h8"/></svg></span>
+        <span class="need__t" data-i18n="need3">Масоҳат ва тарҳбандӣ</span>
+      </button>
+      <button class="need" data-need="price" data-r>
+        <span class="need__n">04</span>
+        <span class="need__ico"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10"/><path d="M19 12.5c-.7-1-1.8-1.5-3-1.5-1.8 0-3 .9-3 2.3 0 3.3 6.2 1.8 6.2 5.1 0 1.5-1.4 2.6-3.2 2.6-1.4 0-2.6-.6-3.3-1.7M16 9v2M16 21v2"/></svg></span>
+        <span class="need__t" data-i18n="need4">Нарх ва шароити пардохт</span>
       </button>
     </div>
-  </section>
+    <div class="paybar" data-r>
+      <span class="paybar__q" data-i18n="payQ">Тарзи пардохт</span>
+      <div class="seg" id="payMode">
+        <button data-pay="full" data-i18n="payFull">Пурра</button>
+        <button data-pay="inst" data-i18n="payInst">Рассрочка</button>
+      </div>
+      <span class="paybar__note" data-i18n="payNote">Интихоби шумо дар ҳисобкунаки нарх истифода мешавад.</span>
+    </div>
+  </div>
+</section>
 
-  <!-- 02 NEEDS -->
-  <section class="slide s-needs" data-title="Эҳтиёҷи шумо" data-title-ru="Ваши приоритеты" data-thumb="day-2">
-    <div class="bg"><img class="bg__img" data-src="assets/img/day-2.webp" alt=""></div>
-    <div class="shade shade--deep"></div>
-    <div class="slide__scroll">
-      <div class="wrap">
-        <div class="eyebrow" data-a><span class="num">02</span><span data-i18n="needsEyebrow">Шиносоӣ</span></div>
-        <h2 class="h2 split" data-i18n="needsTitle">Барои шумо <em>кадомаш</em><br>муҳимтар аст?</h2>
-        <p class="sub" data-a data-i18n="needsSub">Интихоб кунед — презентатсия ба шумо мутобиқ мешавад.</p>
-        <div class="needs" data-noswipe>
-          <button class="need" data-need="family" data-a>
-            <span class="need__ico"><svg viewBox="0 0 48 48"><path d="M8 22L24 9l16 13M12 19v20h24V19"/><path d="M20 39V29h8v10"/></svg></span>
-            <span class="need__t" data-i18n="needFamily">Барои зиндагии оилавӣ</span>
-            <span class="need__check"></span>
-          </button>
-          <button class="need" data-need="invest" data-a>
-            <span class="need__ico"><svg viewBox="0 0 48 48"><path d="M8 38h32M12 32l8-9 6 5 10-13"/><path d="M30 15h6v6"/></svg></span>
-            <span class="need__t" data-i18n="needInvest">Барои сармоягузорӣ</span>
-            <span class="need__check"></span>
-          </button>
-          <button class="need" data-need="area" data-a>
-            <span class="need__ico"><svg viewBox="0 0 48 48"><rect x="9" y="9" width="30" height="30"/><path d="M9 22h12V9M27 39V28h12"/></svg></span>
-            <span class="need__t" data-i18n="needArea">Масоҳат ва тарҳбандӣ</span>
-            <span class="need__check"></span>
-          </button>
-          <button class="need" data-need="price" data-a>
-            <span class="need__ico"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M28.5 18.5c-1-1.5-2.6-2.2-4.5-2.2-2.6 0-4.4 1.4-4.4 3.5 0 4.8 9.2 2.6 9.2 7.6 0 2.2-2 3.8-4.8 3.8-2.1 0-3.9-.9-4.9-2.5M24 13.5v3M24 31v3.5"/></svg></span>
-            <span class="need__t" data-i18n="needPrice">Нарх ва шароити пардохт</span>
-            <span class="need__check"></span>
-          </button>
+<!-- ============ LOCATION / 3D MAP ============ -->
+<section class="sec loc" id="location">
+  <div class="wrap">
+    <div class="head head--row">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="lLabel">Ҷойгиршавӣ</span></p>
+        <h2 class="h1 split" data-i18n="lTitle">Ҳама чиз дар наздикии шумо</h2>
+      </div>
+      <p class="body head__p" data-r data-i18n="lText">Барои корҳои ҳаррӯза вақти зиёдатӣ сарф кардан лозим намешавад. Мактаб, кӯдакистон ва варзишгоҳ дар чанд қадам.</p>
+    </div>
+    <div class="map" data-r>
+      <div class="map__list" id="placeList">
+        <button data-poi="school" class="is-on"><span class="pl__t" data-i18n="pSchool">Мактаби №1</span><span class="pl__d">~100 м</span></button>
+        <button data-poi="lyceum"><span class="pl__t" data-i18n="pLyceum">Гимназия-лисейи «Балъамӣ»</span><span class="pl__d">~200 м</span></button>
+        <button data-poi="kinder"><span class="pl__t" data-i18n="pKinder">Кӯдакистони «Лола»</span><span class="pl__d" data-i18n="pBehind">пушти бино</span></button>
+        <button data-poi="stadium"><span class="pl__t" data-i18n="pStadium">Варзишгоҳи «Хайр»</span><span class="pl__d" data-i18n="pFront">рӯ ба рӯ</span></button>
+        <button data-poi="college"><span class="pl__t" data-i18n="pCollege">Коллеҷи омор</span><span class="pl__d" data-i18n="pFront">рӯ ба рӯ</span></button>
+        <button data-poi="cross"><span class="pl__t" data-i18n="pCross">Чорроҳаи Файзобод</span><span class="pl__d">~300 м</span></button>
+        <button data-poi="bazaar"><span class="pl__t" data-i18n="pBazaar">Бозори марказӣ</span><span class="pl__d">~350 м</span></button>
+        <button data-poi="bank"><span class="pl__t" data-i18n="pBank">Бонкҳо</span><span class="pl__d">~350 м</span></button>
+        <button data-poi="pharmacy"><span class="pl__t" data-i18n="pPharm">Дорухона</span><span class="pl__d">~350 м</span></button>
+      </div>
+      <div class="map__stage" id="mapStage" data-noscroll>
+        <canvas id="mapCanvas"></canvas>
+        <div class="map__pins" id="mapPins"></div>
+        <div class="map__ctrl">
+          <button class="mbtn" data-rot="-45" aria-label="Rotate left"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg></button>
+          <div class="compass" id="compass"><span>N</span></div>
+          <button class="mbtn" data-rot="45" aria-label="Rotate right"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4h-4"/></svg></button>
         </div>
-        <div class="paymode" data-a data-noswipe>
-          <span class="paymode__q" data-i18n="payQ">Тарзи пардохт:</span>
-          <div class="seg" id="payMode">
-            <button data-pay="full" data-i18n="payFull">Пурра</button>
-            <button data-pay="inst" data-i18n="payInst">Рассрочка</button>
+        <span class="map__hint" data-i18n="mapHint">Барои чарх задан кашед</span>
+        <span class="map__src">© OpenStreetMap</span>
+      </div>
+    </div>
+    <div class="tags" data-r>
+      <span data-i18n="t1">Дорухонаҳо</span><span data-i18n="t2">Беморхонаҳо</span><span data-i18n="t3">Бонкҳо</span><span data-i18n="t4">Мағозаҳо</span><span data-i18n="t5">Масҷиди ҷумъа</span><span data-i18n="t6">Бозор</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFRASTRUCTURE ============ -->
+<section class="sec infra" id="infra">
+  <div class="wrap">
+    <div class="head head--row">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="iLabel">Инфрасохтор</span></p>
+        <h2 class="h1 split" data-i18n="iTitle">На танҳо квартира, балки муҳити бароҳати зиндагӣ</h2>
+      </div>
+      <p class="body head__p" data-r data-i18n="iText">Қисми зиёди эҳтиёҷоти рӯзмарраро дар наздикии хона қонеъ кардан мумкин аст.</p>
+    </div>
+    <div class="cards4">
+      <article class="card" data-r>
+        <figure class="card__ph"><img src="assets/img/mall-m.webp" alt="" loading="lazy" data-px></figure>
+        <span class="card__n">01</span>
+        <h3 class="h3" data-i18n="c1t">Маркази савдо</h3>
+        <p class="small" data-i18n="c1d">Дар ошёнаи дуюм, бо эскалатор.</p>
+      </article>
+      <article class="card" data-r>
+        <figure class="card__ph"><img src="assets/img/retail-m.webp" alt="" loading="lazy" data-px></figure>
+        <span class="card__n">02</span>
+        <h3 class="h3" data-i18n="c2t">Мағозаҳо ва хизматрасонӣ</h3>
+        <p class="small" data-i18n="c2d">Ошёнаҳои якум ва дуюм: либос, пойафзол, сартарошхона, салони зебоӣ.</p>
+      </article>
+      <article class="card" data-r>
+        <figure class="card__ph card__ph--bottom"><img src="assets/img/courtyard-crop-m.webp" alt="" loading="lazy"></figure>
+        <span class="card__n">03</span>
+        <h3 class="h3" data-i18n="c3t">Майдончаи кӯдакона</h3>
+        <p class="small" data-i18n="c3d">Ҳавлии пӯшида, таҷҳизоти бозӣ, ҷойҳои нишаст ва арғунчакҳо.</p>
+      </article>
+      <article class="card card--facts" data-r>
+        <div class="facts">
+          <div><b class="num">2</b><span data-i18n="f1">блок</span></div>
+          <div><b class="num">2</b><span data-i18n="f2">даромадгоҳ</span></div>
+          <div><b class="num">4</b><span data-i18n="f3">лифт</span></div>
+          <div><b class="num">P</b><span data-i18n="f4">парковка</span></div>
+        </div>
+        <span class="card__n">04</span>
+        <h3 class="h3" data-i18n="c4t">Парковка</h3>
+        <p class="small" data-i18n="c4d">Зеризаминӣ ва рӯизаминӣ. Балконҳо аз тарафи қафои бино.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARC GALLERY ============ -->
+<section class="arcsec" id="real">
+  <div class="arcsec__pin">
+    <div class="arc" id="arc">
+      <figure><img src="assets/img/lobby-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/corridor-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/lift-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/mall-2-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/office-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/night-angle-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/lobby-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/detail-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/corridor-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/office-2-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/lift-m.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/img/retail-m.webp" alt="" loading="lazy"></figure>
+    </div>
+    <div class="arcsec__c">
+      <p class="label"><i class="dot"></i><span data-i18n="gLabel">Аксҳои воқеӣ</span></p>
+      <h2 class="h1" data-i18n="gTitle">Даромадгоҳ ва лифтҳо</h2>
+      <p class="body" data-i18n="gText">Ин аксҳо аз худи бино ва офиси фурӯш гирифта шудаанд.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAFETY ============ -->
+<section class="sec safe" id="safety">
+  <div class="wrap">
+    <div class="head head--row">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="sLabel">Бехатарӣ</span></p>
+        <h2 class="h1 split" data-i18n="sTitle">Бехатарӣ ва таъминоти мустақил</h2>
+      </div>
+      <p class="body head__p" data-r data-i18n="sText">Бароҳатӣ бояд дар ҳолатҳои ғайричашмдошт ҳам нигоҳ дошта шавад.</p>
+    </div>
+    <div class="safe__grid">
+      <div class="tile tile--hot" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><path d="M4 11l18-4 2 7-18 4zM13 16l2 6H9M9 22v4"/><circle cx="19" cy="10" r="1.4"/></svg></span>
+        <b class="num">24/7</b>
+        <span data-i18n="z1">Камераҳои назоратӣ</span>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><path d="M16 4l9 3.5v7.5c0 6-4 10.5-9 13-5-2.5-9-7-9-13V7.5z"/><path d="M12 16l3 3 5-6"/></svg></span>
+        <b class="h3" data-i18n="z2">Системаи бехатарӣ</b>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><path d="M5 23l4-11h14l4 11z"/><path d="M7 17.5h18M14 12l-1 11M18 12l1 11M16 4v3M9 6l1.5 2M23 6l-1.5 2"/></svg></span>
+        <b class="h3" data-i18n="z3">Панелҳои офтобӣ</b>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><rect x="4" y="9" width="24" height="15" rx="2"/><path d="M17 12l-4 6h5l-3 5M8 24v3M24 24v3"/></svg></span>
+        <b class="h3" data-i18n="z4">Генератор</b>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><path d="M16 4c4 6 8 10 8 15a8 8 0 0 1-16 0c0-5 4-9 8-15z"/></svg></span>
+        <b class="num"><span data-count="40">40</span> т</b>
+        <span data-i18n="z5">Захираи об</span>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><path d="M6 9h20M9 9v18h14V9M13 15h6M13 20h6M16 4v5"/></svg></span>
+        <b class="h3" data-i18n="z6">Оби давлатӣ ва чоҳи алоҳида</b>
+      </div>
+      <div class="tile" data-r>
+        <span class="tile__ico"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="3"/><path d="M17 9l-4 7h6l-4 7"/></svg></span>
+        <b class="num" data-count="2">2</b>
+        <span data-i18n="z7">трансформатор</span>
+      </div>
+      <div class="tile tile--note" data-r>
+        <i class="live"></i>
+        <p class="small" data-i18n="z8">Ҳангоми қатъ шудани барқ лифтҳои муайян, равшании даромадгоҳҳо ва таъминоти об кор мекунанд.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALITY ============ -->
+<section class="sec qual" id="quality">
+  <div class="wrap qual__grid">
+    <figure class="ph ph--tall" data-r><img src="assets/img/detail.webp" srcset="assets/img/detail-m.webp 960w, assets/img/detail.webp 1736w" sizes="(max-width:760px) 92vw, 45vw" alt="" loading="lazy" data-px></figure>
+    <div>
+      <p class="label" data-r><i class="dot"></i><span data-i18n="qLabel">Сифати сохтмон</span></p>
+      <h2 class="h1 split" data-i18n="qTitle">Сохтмон бо таваҷҷуҳ ба ҷузъиёти муҳим</h2>
+      <div class="specs">
+        <div class="spec" data-r><b class="num" data-count="16">16</b><span data-i18n="q1">ошёна</span></div>
+        <div class="spec" data-r><b class="num" data-count="9">9</b><span data-i18n="q2">қатор тирезаҳои панорамӣ</span></div>
+        <div class="spec" data-r><b class="num">М350</b><span data-i18n="q3">маркаи семент</span></div>
+        <div class="spec" data-r><b class="num" data-count="182">182</b><span data-i18n="q4">квартира дар маҷмӯъ</span></div>
+      </div>
+      <ul class="checks" data-r>
+        <li data-i18n="q5">Арматура мувофиқи стандартҳои эълоншуда</li>
+        <li data-i18n="q6">Лифтҳо барои ҳар ду даромадгоҳ</li>
+        <li data-i18n="q7">Ҳуҷҷатҳои техникии лоиҳаро дар офиси фурӯш дидан мумкин аст</li>
+      </ul>
+      <div class="site" data-r>
+        <img src="assets/img/build-1-t.webp" alt="" loading="lazy">
+        <img src="assets/img/build-2-t.webp" alt="" loading="lazy">
+        <span class="small" data-i18n="q8">Раванди сохтмон</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLATS ============ -->
+<section class="sec flats" id="flats">
+  <div class="wrap">
+    <div class="head head--row">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="fLabel">Хонаҳо</span></p>
+        <h2 class="h1 split" data-i18n="fTitle">Аз якхонагӣ то сехонагӣ</h2>
+      </div>
+      <p class="body head__p" data-r data-i18n="fText">Масоҳати квартираҳо тақрибан аз 50 то 90 м². Нарх аз ошёна вобаста аст.</p>
+    </div>
+    <div class="plans">
+      <article class="plan" data-r data-area="50">
+        <div class="plan__top">
+          <span class="plan__k" data-i18n="r1">1-хонагӣ</span>
+          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M30 10H110M170 160H215"/><path d="M10 10H230V160H10Z M140 10V160 M140 95H230 M185 95V160" pathLength="1"/></svg>
+          <b class="num">50 <small>м²</small></b>
+          <span class="plan__p"><span data-i18n="from">аз</span> $28 500</span>
+        </div>
+        <ul class="plan__ul">
+          <li data-i18n="r1a">Барои як нафар ё ҷуфти ҷавон</li>
+          <li data-i18n="r1b">Барои сармоягузорӣ мувофиқ</li>
+          <li data-i18n="r1c">Харҷи камтарин</li>
+        </ul>
+        <button class="btn btn--line" data-calc="50" data-i18n="calcBtn">Ҳисоб кардан</button>
+      </article>
+      <article class="plan plan--hot" data-r data-area="65">
+        <div class="plan__top">
+          <span class="plan__k" data-i18n="r2">2-хонагӣ</span>
+          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M25 10H95M140 10H210M25 160H65"/><path d="M10 10H230V160H10Z M120 10V100 M10 100H230 M80 100V160 M170 100V160" pathLength="1"/></svg>
+          <b class="num">61–69 <small>м²</small></b>
+          <span class="plan__p"><span data-i18n="from">аз</span> $34 770</span>
+        </div>
+        <ul class="plan__ul">
+          <li data-i18n="r2a">Барои оилаҳои ҷавон</li>
+          <li data-i18n="r2b">Метавон ба 3-хонагии пурра табдил дод</li>
+          <li data-i18n="r2c">Ҳатто бо тиреза дар ошхона</li>
+        </ul>
+        <button class="btn btn--dark" data-calc="65" data-i18n="calcBtn">Ҳисоб кардан</button>
+      </article>
+      <article class="plan" data-r data-area="85">
+        <div class="plan__top">
+          <span class="plan__k" data-i18n="r3">3-хонагӣ</span>
+          <svg class="plan__svg" viewBox="0 0 240 170"><path class="win" d="M20 10H75M105 10H145M175 10H220M190 160H220"/><path d="M10 10H230V160H10Z M90 10V95 M160 10V95 M10 95H230 M60 95V160 M180 95V160 M120 95V125" pathLength="1"/></svg>
+          <b class="num">80–93 <small>м²</small></b>
+          <span class="plan__p"><span data-i18n="from">аз</span> $45 600</span>
+        </div>
+        <ul class="plan__ul">
+          <li data-i18n="r3a">Барои оилаҳои калон</li>
+          <li data-i18n="r3b">Ҳуҷраҳои алоҳида ва фарох</li>
+          <li data-i18n="r3c">Тирезаҳои панорамӣ</li>
+        </ul>
+        <button class="btn btn--line" data-calc="85" data-i18n="calcBtn">Ҳисоб кардан</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE / CALCULATOR ============ -->
+<section class="sec price" id="price">
+  <div class="wrap">
+    <div class="head head--row">
+      <div>
+        <p class="label" data-r><i class="dot"></i><span data-i18n="pLabel">Нарх ва шароит</span></p>
+        <h2 class="h1 split" data-i18n="pTitle">Шароити харид</h2>
+      </div>
+      <div class="terms" data-r>
+        <div><span data-i18n="tm1">Пешпардохт</span><b>20–70%</b></div>
+        <div><span data-i18n="tm2">Рассрочка</span><b data-i18n="tm2v">6 · 12 · 18 моҳ</b></div>
+        <div><span data-i18n="tm3">Нархи 1 м²</span><b>$570–680</b></div>
+      </div>
+    </div>
+    <div class="price__grid">
+      <div class="tower-card" data-r>
+        <div class="tower-card__head"><span data-i18n="floor">Ошёна</span><span data-i18n="minPre">Пешпардохт аз</span><span>$ / м²</span></div>
+        <div class="tower" id="tower"></div>
+        <div class="tower__base"><span>1–2</span><b data-i18n="mallShort">Маркази савдо</b></div>
+      </div>
+      <div class="calc" data-r>
+        <div class="calc__rows">
+          <div class="crow"><label><span data-i18n="cFloor">Ошёна</span><b id="cFloorV">9</b></label><input type="range" id="cFloor" min="5" max="16" step="1" value="9"></div>
+          <div class="crow"><label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label><input type="range" id="cArea" min="50" max="93" step="1" value="65"></div>
+          <div class="crow"><label><span data-i18n="cPre">Пешпардохт</span><b><span id="cPreV">50</span>%</b></label><input type="range" id="cPre" min="20" max="100" step="5" value="50"><small id="cPreHint"></small></div>
+          <div class="crow" id="termRow"><label><span data-i18n="cTerm">Рассрочка</span></label>
+            <div class="seg seg--full" id="cTerm"><button data-term="6" data-i18n="m6">6 моҳ</button><button data-term="12" class="is-on" data-i18n="m12">12 моҳ</button><button data-term="18" data-i18n="m18">18 моҳ</button></div>
           </div>
+        </div>
+        <div class="result">
+          <div class="result__main"><span data-i18n="rTotal">Арзиши умумӣ</span><b id="rTotal">$0</b><small id="rTotalS"></small></div>
+          <div class="result__row">
+            <div><span data-i18n="rM2">1 м²</span><b id="rM2">$0</b></div>
+            <div><span data-i18n="rPre">Пешпардохт</span><b id="rPre">$0</b></div>
+            <div><span data-i18n="rMonth">Ҳар моҳ</span><b id="rMonth">$0</b></div>
+          </div>
+        </div>
+        <p class="small muted" data-i18n="fine">Ҳисоб тахминӣ аст. Маблағи дақиқро дар офиси фурӯш муайян мекунем.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec cta" id="contact">
+  <div class="wrap">
+    <div class="cta__card" data-r>
+      <img class="cta__bg" src="assets/img/office-m.webp" alt="" loading="lazy" data-px>
+      <div class="cta__in">
+        <p class="label"><i class="dot"></i><span data-i18n="ctLabel">Тамос</span></p>
+        <h2 class="h1" data-i18n="ctTitle">Ба офиси фурӯш ташриф биёред</h2>
+        <p class="body" data-i18n="ctText">Барои гирифтани маълумоти муфассал ва интихоби квартира.</p>
+        <div class="cta__sum" id="summary"></div>
+        <div class="cta__btns">
+          <a class="btn btn--accent" id="waBtn" href="https://wa.me/992000777761" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg><span>WhatsApp</span>
+          </a>
+          <a class="btn btn--glass" href="tel:+992000777761">+992 000 7777 61</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- 03 LOCATION -->
-  <section class="slide s-loc" data-title="Ҷойгиршавӣ" data-title-ru="Расположение" data-thumb="aerial">
-    <div class="bg" data-parallax><img class="bg__img" data-src="assets/img/aerial.webp" alt=""></div>
-    <div class="shade shade--left"></div>
-    <div class="slide__scroll">
-      <div class="wrap grid-2">
-        <div class="col">
-          <div class="eyebrow" data-a><span class="num">03</span><span data-i18n="locEyebrow">Бартарии асосӣ</span></div>
-          <h2 class="h2 split" data-i18n="locTitle">Ҳама чиз<br><em>дар наздикии</em> шумо</h2>
-          <p class="sub" data-a data-i18n="locSub">Барои зиндагии бароҳат вақти камтар сарф кунед.</p>
-          <ul class="places">
-            <li data-a data-dot="school"><span class="places__t" data-i18n="pSchool">Мактаби миёна</span><span class="places__bar"><i style="--w:.35"></i></span><span class="places__d">~100 м</span></li>
-            <li data-a data-dot="lyceum"><span class="places__t" data-i18n="pLyceum">Гимназия-лисейи «Балъамӣ»</span><span class="places__bar"><i style="--w:.7"></i></span><span class="places__d">~200 м</span></li>
-            <li data-a data-dot="kinder"><span class="places__t" data-i18n="pKinder">Кӯдакистони «Лола»</span><span class="places__bar"><i style="--w:.12"></i></span><span class="places__d" data-i18n="pBehind">пушти бино</span></li>
-            <li data-a data-dot="sport"><span class="places__t" data-i18n="pSport">Варзишгоҳ ва сексияҳо</span><span class="places__bar"><i style="--w:.2"></i></span><span class="places__d" data-i18n="pFront">рӯ ба рӯ</span></li>
-          </ul>
-          <div class="tags" data-a>
-            <span data-i18n="tPharm">Дорухона</span><span data-i18n="tHosp">Беморхона</span><span data-i18n="tBank">Бонк</span><span data-i18n="tShop">Мағоза</span><span data-i18n="tMosque">Масҷиди ҷумъа</span><span data-i18n="tMarket">Бозор</span>
-          </div>
-        </div>
-        <div class="col col--radar" data-a>
-          <div class="radar">
-            <svg viewBox="0 0 400 400">
-              <defs>
-                <radialGradient id="rg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#d8b779" stop-opacity=".22"/><stop offset="1" stop-color="#d8b779" stop-opacity="0"/></radialGradient>
-              </defs>
-              <circle cx="200" cy="200" r="190" fill="url(#rg)"/>
-              <circle class="ring" cx="200" cy="200" r="70"/>
-              <circle class="ring" cx="200" cy="200" r="140"/>
-              <circle class="ring ring--o" cx="200" cy="200" r="190"/>
-              <text class="ring-l" x="200" y="124">100 м</text>
-              <text class="ring-l" x="200" y="54">200 м</text>
-              <g class="pts">
-                <g class="pt pt--key" data-dot="school" transform="translate(252 150)"><circle r="6"/><text x="12" y="4" data-i18n="rSchool">Мактаб</text></g>
-                <g class="pt pt--key" data-dot="lyceum" transform="translate(84 116)"><circle r="6"/><text x="-12" y="4" text-anchor="end" data-i18n="rLyceum">Лисей</text></g>
-                <g class="pt pt--key" data-dot="kinder" transform="translate(206 168)"><circle r="6"/><text x="12" y="-6" data-i18n="rKinder">Боғча</text></g>
-                <g class="pt pt--key" data-dot="sport" transform="translate(196 262)"><circle r="6"/><text x="12" y="16" data-i18n="rSport">Варзишгоҳ</text></g>
-                <g class="pt" transform="translate(300 290)"><circle r="3.5"/></g>
-                <g class="pt" transform="translate(120 300)"><circle r="3.5"/></g>
-                <g class="pt" transform="translate(320 110)"><circle r="3.5"/></g>
-                <g class="pt" transform="translate(90 220)"><circle r="3.5"/></g>
-                <g class="pt" transform="translate(250 340)"><circle r="3.5"/></g>
-                <g class="pt" transform="translate(150 60)"><circle r="3.5"/></g>
-              </g>
-              <g class="center" transform="translate(200 210)">
-                <circle class="pulse" r="10"/><circle class="pulse pulse--2" r="10"/>
-                <circle r="9" class="core"/>
-                <path d="M-4 4v-7l3-2v9M-1 4v-10l3 2v8M2 4v-6l3 1.5v4.5" class="core-mark"/>
-              </g>
-            </svg>
-            <div class="radar__sweep"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 COMPLEX -->
-  <section class="slide s-complex" data-title="Инфрасохтор" data-title-ru="Инфраструктура" data-thumb="retail">
-    <div class="bg bg--dark"></div>
-    <div class="slide__scroll">
-      <div class="wrap">
-        <div class="head-row">
-          <div>
-            <div class="eyebrow" data-a><span class="num">04</span><span data-i18n="cxEyebrow">Инфрасохтори дохилӣ</span></div>
-            <h2 class="h2 split" data-i18n="cxTitle">На танҳо квартира —<br><em>муҳити бароҳати</em> зиндагӣ</h2>
-          </div>
-        </div>
-        <div class="bento">
-          <figure class="tile tile--a" data-a><img data-src="assets/img/retail.webp" alt="" loading="lazy"><figcaption><b data-i18n="cxShops">Мағозаҳо</b><span data-i18n="cxShopsD">дар ошёнаҳои якум ва дуюм</span></figcaption></figure>
-          <figure class="tile tile--b" data-a><img data-src="assets/img/mall.webp" alt="" loading="lazy"><figcaption><b data-i18n="cxMall">Маркази савдо</b><span data-i18n="cxMallD">ошёнаи дуюм · эскалатор</span></figcaption></figure>
-          <figure class="tile tile--c" data-a><img data-src="assets/img/courtyard.webp" alt="" loading="lazy"><figcaption><b data-i18n="cxYard">Майдончаи кӯдакона</b><span data-i18n="cxYardD">ҳавлии пӯшида</span></figcaption></figure>
-          <div class="tile tile--n" data-a><b class="big">2<small>+</small>2</b><span data-i18n="cxBlocks">блок ва даромадгоҳ</span></div>
-          <div class="tile tile--n" data-a><b class="big" data-count="4">0</b><span data-i18n="cxLifts">лифт</span></div>
-          <div class="tile tile--n tile--p" data-a><b class="big">P</b><span data-i18n="cxPark">парковкаи зеризаминӣ ва рӯизаминӣ</span></div>
-        </div>
-        <div class="marquee" data-a>
-          <div class="marquee__track" data-i18n="cxServices">
-            <span>Либос</span><span>Пойафзол</span><span>Сартарошхона</span><span>Салони зебоӣ</span><span>Кафе</span><span>Балконҳо аз тарафи қафои бино</span><span>Либос</span><span>Пойафзол</span><span>Сартарошхона</span><span>Салони зебоӣ</span><span>Кафе</span><span>Балконҳо аз тарафи қафои бино</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 INTERIOR (real photos) -->
-  <section class="slide s-real" data-title="Аксҳои воқеӣ" data-title-ru="Реальные фото" data-thumb="lobby">
-    <div class="bg bg--dark"></div>
-    <div class="slide__scroll">
-      <div class="real">
-        <div class="real__head">
-          <div class="eyebrow" data-a><span class="num">05</span><span data-i18n="realEyebrow">Воқеият, на танҳо рендер</span></div>
-          <h2 class="h2 split" data-i18n="realTitle">Даромадгоҳ<br>ва <em>лифтҳо</em></h2>
-          <p class="sub" data-a data-i18n="realSub">Мармар, чӯби табиӣ ва равшании гарм — ин аксҳо аз худи бино гирифта шудаанд.</p>
-          <div class="real__nav" data-a>
-            <button class="arrow" data-gal="-1" aria-label="Prev"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="arrow" data-gal="1" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="drag-hint" data-i18n="drag">Кашед ↔</span>
-          </div>
-        </div>
-        <div class="gallery" id="gallery" data-noswipe>
-          <div class="gallery__track" id="galTrack">
-            <figure class="gal" data-a><div class="gal__in"><img data-src="assets/img/lobby.webp" alt="" loading="lazy" draggable="false"></div><figcaption><span>01</span><b data-i18n="gLobby">Толори лифтҳо</b></figcaption></figure>
-            <figure class="gal" data-a><div class="gal__in"><img data-src="assets/img/corridor.webp" alt="" loading="lazy" draggable="false"></div><figcaption><span>02</span><b data-i18n="gCorr">Долони ошёна</b></figcaption></figure>
-            <figure class="gal" data-a><div class="gal__in"><img data-src="assets/img/lift.webp" alt="" loading="lazy" draggable="false"></div><figcaption><span>03</span><b data-i18n="gLift">Кабинаи лифт</b></figcaption></figure>
-            <figure class="gal gal--wide" data-a><div class="gal__in"><img data-src="assets/img/mall-2.webp" alt="" loading="lazy" draggable="false"></div><figcaption><span>04</span><b data-i18n="gMall">Маркази савдо</b></figcaption></figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 SAFETY -->
-  <section class="slide s-safe" data-title="Бехатарӣ" data-title-ru="Безопасность" data-thumb="night-angle">
-    <div class="bg" data-parallax><img class="bg__img" data-src="assets/img/night-angle.webp" alt=""></div>
-    <div class="shade shade--deep2"></div>
-    <div class="slide__scroll">
-      <div class="wrap">
-        <div class="eyebrow" data-a><span class="num">06</span><span data-i18n="safeEyebrow">Бехатарӣ ва таъминоти мустақил</span></div>
-        <h2 class="h2 split" data-i18n="safeTitle">Бароҳатӣ — ҳатто<br>дар ҳолатҳои <em>ғайричашмдошт</em></h2>
-        <div class="systems">
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><path d="M7 16l26-6 3 10-26 6zM20 23l3 9h-9M14 32v6"/><circle cx="29" cy="15" r="2"/></svg></span><b>24/7</b><span data-i18n="sCam">Камераҳои назоратӣ</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><path d="M24 6l14 5v11c0 9-6 16-14 20-8-4-14-11-14-20V11z"/><path d="M18 24l4 4 8-8"/></svg></span><b data-i18n="sSecB">Ҳифз</b><span data-i18n="sSec">Системаи бехатарӣ</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><path d="M8 34l6-16h20l6 16z"/><path d="M11 26h26M21 18l-2 16M27 18l2 16M24 6v4M14 9l2 3M34 9l-2 3"/></svg></span><b data-i18n="sSolarB">Офтоб</b><span data-i18n="sSolar">Панелҳои офтобӣ</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><rect x="7" y="14" width="34" height="22" rx="2"/><path d="M25 18l-5 9h7l-4 7M12 36v4M36 36v4"/></svg></span><b data-i18n="sGenB">Захира</b><span data-i18n="sGen">Генератор</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><path d="M24 6c6 9 12 15 12 23a12 12 0 0 1-24 0c0-8 6-14 12-23z"/><path d="M18 30a6 6 0 0 0 6 6"/></svg></span><b><span data-count="40">0</span> т</b><span data-i18n="sWater">Захираи об</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><path d="M10 14h28M14 14v26h20V14M19 22h10M19 29h10M24 6v8"/></svg></span><b data-i18n="sWellB">2 манбаъ</b><span data-i18n="sWell">Оби давлатӣ ва чоҳи алоҳида</span></div>
-          <div class="sys" data-a><span class="sys__ico"><svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="3"/><path d="M26 14l-6 10h8l-6 10"/></svg></span><b data-count="2">0</b><span data-i18n="sTrans">Трансформатор</span></div>
-        </div>
-        <p class="note" data-a><i></i><span data-i18n="safeNote">Ҳангоми қатъ шудани барқ лифтҳои муайян, равшании даромадгоҳҳо ва таъминоти об кор мекунанд.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 QUALITY -->
-  <section class="slide s-qual" data-title="Сифати сохтмон" data-title-ru="Качество" data-thumb="detail">
-    <div class="bg bg--dark"></div>
-    <div class="slide__scroll">
-      <div class="qual">
-        <div class="qual__img" data-a><div class="qual__mask"><img data-src="assets/img/detail.webp" alt="" loading="lazy"></div><span class="qual__tag" data-i18n="qTag">Тирезаҳои панорамӣ</span></div>
-        <div class="qual__body">
-          <div class="eyebrow" data-a><span class="num">07</span><span data-i18n="qEyebrow">Сифат ва хусусиятҳо</span></div>
-          <h2 class="h2 split" data-i18n="qTitle">Сохтмон бо таваҷҷуҳ<br>ба <em>ҷузъиёт</em></h2>
-          <div class="specs">
-            <div class="spec" data-a><b data-count="16">0</b><span data-i18n="qFloors">ошёна</span></div>
-            <div class="spec" data-a><b data-count="9">0</b><span data-i18n="qWin">қатор тирезаҳои панорамӣ</span></div>
-            <div class="spec" data-a><b>М<span data-count="350">0</span></b><span data-i18n="qCem">маркаи семент</span></div>
-            <div class="spec" data-a><b data-count="182">0</b><span data-i18n="qFlats">квартира дар маҷмӯъ</span></div>
-          </div>
-          <ul class="checks" data-a>
-            <li data-i18n="qArm">Арматура мувофиқи стандартҳои эълоншуда</li>
-            <li data-i18n="qLifts">Лифтҳо дар ҳар ду даромадгоҳ</li>
-          </ul>
-          <div class="site-photos" data-a>
-            <span class="site-photos__l" data-i18n="qSite">Раванди сохтмон · акси воқеӣ</span>
-            <div class="site-photos__row">
-              <img data-src="assets/img/build-1.webp" alt="" loading="lazy">
-              <img data-src="assets/img/build-2.webp" alt="" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 08 APARTMENTS -->
-  <section class="slide s-apt" data-title="Хонаҳо" data-title-ru="Квартиры" data-thumb="day-3">
-    <div class="bg"><img class="bg__img" data-src="assets/img/day-3.webp" alt=""></div>
-    <div class="shade shade--deep"></div>
-    <div class="slide__scroll">
-      <div class="wrap">
-        <div class="eyebrow" data-a><span class="num">08</span><span data-i18n="aptEyebrow">Тарҳбандӣ</span></div>
-        <h2 class="h2 split" data-i18n="aptTitle">Аз якхонагӣ<br>то <em>сехонагӣ</em></h2>
-        <div class="apts">
-          <article class="apt" data-a>
-            <svg class="plan" viewBox="0 0 240 170"><path class="win" d="M30 10H110M170 160H215"/><path d="M10 10H230V160H10Z M140 10V160 M140 95H230 M185 95V160" pathLength="1"/></svg>
-            <div class="apt__k"><span data-i18n="r1">1-хонагӣ</span></div>
-            <div class="apt__v"><small data-i18n="from">аз</small> 50 <i>м²</i></div>
-            <p data-i18n="r1d">Барои шахсони муҷаррад ё ҷавонон. Интихоби иқтисодӣ.</p>
-          </article>
-          <article class="apt" data-a>
-            <svg class="plan" viewBox="0 0 240 170"><path class="win" d="M25 10H95M140 10H210M25 160H65"/><path d="M10 10H230V160H10Z M120 10V100 M10 100H230 M80 100V160 M170 100V160" pathLength="1"/></svg>
-            <div class="apt__k"><span data-i18n="r2">2-хонагӣ</span></div>
-            <div class="apt__v">61–69 <i>м²</i></div>
-            <p data-i18n="r2d">Барои оилаҳои ҷавон бо 1–2 кӯдак.</p>
-          </article>
-          <article class="apt apt--hl" data-a>
-            <svg class="plan" viewBox="0 0 240 170"><path class="win" d="M20 10H75M105 10H145M175 10H220M190 160H220"/><path d="M10 10H230V160H10Z M90 10V95 M160 10V95 M10 95H230 M60 95V160 M180 95V160 M120 95V125" pathLength="1"/></svg>
-            <div class="apt__k"><span data-i18n="r3">3-хонагӣ</span></div>
-            <div class="apt__v">80–93 <i>м²</i></div>
-            <p data-i18n="r3d">Барои оилаҳои калон. Ҳуҷраҳои алоҳида ва фарох.</p>
-          </article>
-        </div>
-        <div class="convert" data-a>
-          <span class="convert__badge">2 → 3</span>
-          <p data-i18n="convert">2-хонагиро ба 3-хонагии пурра табдил додан мумкин — ҳатто бо тиреза дар ошхона.</p>
-          <div class="range"><span>50 м²</span><div class="range__bar"><i></i></div><span>90+ м²</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 09 PRICES + CALCULATOR -->
-  <section class="slide s-price" data-title="Нарх ва шароит" data-title-ru="Цены и условия" data-thumb="night">
-    <div class="bg bg--dark bg--glow"></div>
-    <div class="slide__scroll">
-      <div class="price">
-        <div class="price__tower" data-a data-noswipe>
-          <div class="tower__head"><span data-i18n="floor">Ошёна</span><span data-i18n="minPreHead">ҳадди ақали пешпардохт</span><span>$ / м²</span></div>
-          <div class="tower" id="tower"></div>
-          <div class="tower__base"><span>1–2</span><b data-i18n="mallShort">Маркази савдо</b></div>
-          <div class="tower__base tower__base--d"><span>−1</span><b data-i18n="parkShort">Таваққуфгоҳ</b></div>
-        </div>
-        <div class="price__calc">
-          <div class="eyebrow" data-a><span class="num">09</span><span data-i18n="priceEyebrow">Шароити харид</span></div>
-          <h2 class="h2 split" data-i18n="priceTitle">Хонаи худро<br><em>ҳисоб</em> кунед</h2>
-          <div class="calc" data-a data-noswipe>
-            <div class="calc__row">
-              <label><span data-i18n="cFloor">Ошёна</span><b id="cFloorV">9</b></label>
-              <input type="range" id="cFloor" min="5" max="16" step="1" value="9">
-            </div>
-            <div class="calc__row">
-              <label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label>
-              <input type="range" id="cArea" min="50" max="93" step="1" value="65">
-            </div>
-            <div class="calc__row">
-              <label><span data-i18n="cPre">Пешпардохт</span><b><span id="cPreV">50</span>%</b></label>
-              <input type="range" id="cPre" min="20" max="100" step="5" value="50">
-              <small class="calc__hint" id="cPreHint"></small>
-            </div>
-            <div class="calc__row" id="termRow">
-              <label><span data-i18n="cTerm">Рассрочка</span></label>
-              <div class="seg seg--full" id="cTerm">
-                <button data-term="6" data-i18n="m6">6 моҳ</button>
-                <button data-term="12" class="is-on" data-i18n="m12">12 моҳ</button>
-                <button data-term="18" data-i18n="m18">18 моҳ</button>
-              </div>
-            </div>
-          </div>
-          <div class="result" data-a>
-            <div class="result__main">
-              <span data-i18n="rTotal">Арзиши умумӣ</span>
-              <b id="rTotal">$0</b>
-              <small id="rTotalS">0 сомонӣ</small>
-            </div>
-            <div class="result__grid">
-              <div><span data-i18n="rM2">Нархи 1 м²</span><b id="rM2">$0</b></div>
-              <div><span data-i18n="rPre">Пешпардохт</span><b id="rPre">$0</b></div>
-              <div class="result__month"><span data-i18n="rMonth">Ҳар моҳ</span><b id="rMonth">$0</b></div>
-            </div>
-          </div>
-          <p class="fine" data-a data-i18n="fine">Нарх аз ошёна вобаста аст. Ҳисоб тахминӣ мебошад — маблағи дақиқро дар офиси фурӯш муайян мекунем.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 CONTACT -->
-  <section class="slide s-contact" data-title="Тамос" data-title-ru="Контакты" data-thumb="office">
-    <div class="bg" data-parallax><img class="bg__img" data-src="assets/img/night-angle.webp" alt=""></div>
-    <div class="shade shade--contact"></div>
-    <div class="slide__scroll">
-      <div class="wrap grid-2 contact">
-        <div class="col">
-          <div class="eyebrow" data-a><span class="num">10</span><span data-i18n="ctEyebrow">Қадами навбатӣ</span></div>
-          <h2 class="h2 split" data-i18n="ctTitle">Ба офиси фурӯш<br><em>ташриф биёред</em></h2>
-          <p class="sub" data-a data-i18n="ctSub">Хонаи мувофиқро якҷоя интихоб мекунем ва шароити харидро дақиқ ҳисоб мекунем.</p>
-          <div class="summary" id="summary" data-a>
-            <span class="summary__l" data-i18n="yourCalc">Ҳисоби шумо</span>
-            <div class="summary__v" id="summaryV"></div>
-          </div>
-          <div class="ct-actions" data-a>
-            <a class="btn btn--gold" id="waBtn" href="https://wa.me/992000777761" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
-              <span data-i18n="wa">Навиштан дар WhatsApp</span>
-            </a>
-            <a class="btn btn--ghost" href="tel:+992000777761"><span>+992 000 7777 61</span></a>
-          </div>
-        </div>
-        <div class="col col--office">
-          <div class="office" data-a>
-            <img data-src="assets/img/office.webp" alt="" loading="lazy">
-            <div class="office__card">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
-              <div>
-                <b data-i18n="ctAddr">ш. Ваҳдат, кӯчаи Сомониён</b>
-                <span data-i18n="ctAddr2">чорроҳаи Файзобод, назди мактаби №1</span>
-                <a href="https://www.google.com/maps/search/?api=1&query=Vahdat+Somoniyon+street" target="_blank" rel="noopener" data-i18n="openMap">Харитаро кушодан →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="foot" data-a><span>© 2026 ЖК «Юсуф Бунёдкор»</span><span data-i18n="foot">Тасвирҳо визуализатсия мебошанд</span></div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <img class="foot__logo" src="assets/logo/logo-white.svg" alt="Yusuf Bunyodkor" loading="lazy">
+    <div>
+      <p class="label" data-i18n="ftAddr">Суроға</p>
+      <p class="small" data-i18n="addr">ш. Ваҳдат, хиёбони Сомониён, чорроҳаи Файзобод, назди мактаби №1</p>
+    </div>
+    <div>
+      <p class="label" data-i18n="ftPhone">Телефон</p>
+      <p class="small"><a href="tel:+992000777761">+992 000 7777 61</a></p>
+    </div>
+    <div class="foot__links">
+      <a href="#about" data-i18n="nAbout">Лоиҳа</a><a href="#location" data-i18n="nLoc">Ҷойгиршавӣ</a><a href="#flats" data-i18n="nFlats">Хонаҳо</a><a href="#price" data-i18n="nPrice">Нархҳо</a>
+    </div>
+  </div>
+  <div class="wrap foot__bot">
+    <span>© 2026 ЖК «Юсуф Бунёдкор»</span>
+    <span data-i18n="ftNote">Тасвирҳо визуализатсия мебошанд</span>
+  </div>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/map-data.js?v=3"></script>
+<script src="assets/js/map.js?v=3"></script>
+<script src="assets/js/app.js?v=3"></script>
 </body>
 </html>
