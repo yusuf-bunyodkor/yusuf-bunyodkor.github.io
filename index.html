@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/night.webp" media="(min-width: 761px)">
 <link rel="preload" as="image" href="assets/img/night-m.webp" media="(max-width: 760px)">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
 
@@ -349,9 +349,9 @@
     <div class="head head--row">
       <div>
         <p class="label" data-r><i class="dot"></i><span data-i18n="fLabel">Хонаҳо</span></p>
-        <h2 class="h1 split" data-i18n="fTitle">Аз якхонагӣ то сехонагӣ</h2>
+        <h2 class="h1 split" data-i18n="fTitle">Якхонагӣ ва духонагӣ</h2>
       </div>
-      <p class="body head__p" data-r data-i18n="fText">Масоҳати квартираҳо аз 50 то 93 м². Нарх аз ошёна вобаста аст.</p>
+      <p class="body head__p" data-r data-i18n="fText">Масоҳати квартираҳо аз 50 то 90 м². Духонагиро метавон ба сехонагии пурра табдил дод.</p>
     </div>
     <div class="plans">
       <article class="plan" data-r data-area="50">
@@ -372,27 +372,27 @@
         <div class="plan__top">
           <span class="plan__k" data-i18n="r2">2-хонагӣ</span>
           <span class="plan__big" aria-hidden="true">2</span>
-          <b class="num">61–69 <small>м²</small></b>
+          <b class="num">61–90 <small>м²</small></b>
           <span class="plan__p"><span data-i18n="from">аз</span> $34 770</span>
         </div>
         <ul class="plan__ul">
           <li data-i18n="r2a">Барои оилаҳои ҷавон</li>
-          <li data-i18n="r2b">Метавон ба 3-хонагии пурра табдил дод</li>
-          <li data-i18n="r2c">Ҳатто бо тиреза дар ошхона</li>
+          <li data-i18n="r2b">Ду ҳуҷраи алоҳида</li>
+          <li data-i18n="r2c">Тирезаҳои панорамӣ</li>
         </ul>
         <button class="btn btn--dark" data-calc="65" data-i18n="calcBtn">Ҳисоб кардан</button>
       </article>
       <article class="plan" data-r data-area="85">
         <div class="plan__top">
-          <span class="plan__k" data-i18n="r3">3-хонагӣ</span>
+          <span class="plan__k" data-i18n="r3">2 → 3 хонагӣ</span>
           <span class="plan__big" aria-hidden="true">3</span>
-          <b class="num">80–93 <small>м²</small></b>
-          <span class="plan__p"><span data-i18n="from">аз</span> $45 600</span>
+          <b class="num"><small data-i18n="upto">то</small> 90 <small>м²</small></b>
+          <span class="plan__p" data-i18n="r3p">дар асоси духонагӣ</span>
         </div>
         <ul class="plan__ul">
-          <li data-i18n="r3a">Барои оилаҳои калон</li>
-          <li data-i18n="r3b">Ҳуҷраҳои алоҳида ва фарох</li>
-          <li data-i18n="r3c">Тирезаҳои панорамӣ</li>
+          <li data-i18n="r3a">Духонагиро ба сехонагии пурра табдил медиҳем</li>
+          <li data-i18n="r3b">Ҳатто бо тиреза дар ошхона</li>
+          <li data-i18n="r3c">Барои оилаҳои калон</li>
         </ul>
         <button class="btn btn--line" data-calc="85" data-i18n="calcBtn">Ҳисоб кардан</button>
       </article>
@@ -424,7 +424,7 @@
       <div class="calc" data-r>
         <div class="calc__rows">
           <div class="crow"><label><span data-i18n="cFloor">Ошёна</span><b id="cFloorV">9</b></label><input type="range" id="cFloor" aria-label="Ошёна" min="5" max="16" step="1" value="9"></div>
-          <div class="crow"><label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label><input type="range" id="cArea" aria-label="Масоҳат" min="50" max="93" step="1" value="65"></div>
+          <div class="crow"><label><span data-i18n="cArea">Масоҳат</span><b><span id="cAreaV">65</span> м²</b></label><input type="range" id="cArea" aria-label="Масоҳат" min="50" max="90" step="1" value="65"></div>
           <div class="crow"><label><span data-i18n="cPre">Пешпардохт</span><b><span id="cPreV">50</span>%</b></label><input type="range" id="cPre" aria-label="Пешпардохт" min="20" max="100" step="5" value="50"><small id="cPreHint"></small></div>
           <div class="crow" id="termRow"><label><span data-i18n="cTerm">Рассрочка</span></label>
             <div class="seg seg--full" id="cTerm"><button data-term="6" data-i18n="m6">6 моҳ</button><button data-term="12" class="is-on" data-i18n="m12">12 моҳ</button><button data-term="18" data-i18n="m18">18 моҳ</button></div>
@@ -491,8 +491,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/map-data.js?v=6"></script>
-<script src="assets/js/map.js?v=6"></script>
-<script src="assets/js/app.js?v=6"></script>
+<script src="assets/js/map-data.js?v=7"></script>
+<script src="assets/js/map.js?v=7"></script>
+<script src="assets/js/app.js?v=7"></script>
 </body>
 </html>
